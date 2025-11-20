@@ -6,7 +6,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-const FILE = "/data/todos.json";
+const FILE = "./todos.json";
 
 function loadTodos() {
   if (!fs.existsSync(FILE)) {
