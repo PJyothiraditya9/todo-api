@@ -19,6 +19,11 @@ function saveTodos(todos) {
   fs.writeFileSync(FILE, JSON.stringify(todos, null, 2));
 }
 
+app.get("/", (req, res) => {
+  res.json({ message: "Todo API is running" });
+});
+
+
 app.get("/todos", (req, res) => {
   const todos = loadTodos();
   res.status(200).json(todos);
